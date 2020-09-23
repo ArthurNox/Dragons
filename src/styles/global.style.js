@@ -14,7 +14,7 @@ html, body, #root {
 }
 
 body {
-  background: #f0f0f5;
+  background: #f0f3bd;
   font-family: Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
 }

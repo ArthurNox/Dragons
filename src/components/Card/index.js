@@ -1,6 +1,9 @@
 import React from 'react';
 import { useHistory } from "react-router-dom";
 
+import { Container } from './styles';
+import dragon_192 from '../../assets/dragon_192.png'
+
 // import { Container } from './styles';
 
 function Card({ dragon }) {
@@ -12,10 +15,11 @@ function Card({ dragon }) {
   }
 
   return (
-    <div className="container-card" onClick={() => handleClick(dragon.id)}>
+    <Container onClick={() => handleClick(dragon.id)}>
+      <img src={dragon_192} alt="Dragões"/>
       <h1>{dragon.name}</h1>
       <p>{dragon.type}</p>
-    </div>
+    </Container>
   );
 }
 
