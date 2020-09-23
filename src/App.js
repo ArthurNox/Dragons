@@ -1,15 +1,18 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom'
-import logo from './logo.svg';
-import './App.css';
+
+import GlobalStyle from './styles/global.style';
 
 import Routes from './routes'
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes />
-    </BrowserRouter>
+    <> 
+      <GlobalStyle />
+      <BrowserRouter>
+        <Routes />
+      </BrowserRouter>
+    </>
   );
 }
 

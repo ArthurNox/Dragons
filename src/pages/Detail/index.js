@@ -9,14 +9,14 @@ function Detail( ) {
   const [edit, setEdit] = useState(['Editar']);
   const [read, setRead] = useState([true]);
 
-  const parameters = {
-    method: "PUT",
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ 
-      name: dragonName, 
-      type: dragonType, 
-    })
-  }
+  // const parameters = {
+  //   method: "PUT",
+  //   headers: { 'Content-Type': 'application/json' },
+  //   body: JSON.stringify({ 
+  //     name: dragonName, 
+  //     type: dragonType, 
+  //   })
+  // }
 
   useEffect(() => {
     fetch(`http://5c4b2a47aa8ee500142b4887.mockapi.io/api/v1/dragon/${id}`)
@@ -25,7 +25,7 @@ function Detail( ) {
         setDragonName(json.name)
         setDragonType(json.type)
       })
-  }, [])
+  }, [id])
 
   const handleClick = () => {
     if(edit === 'Editar'){
@@ -37,7 +37,14 @@ function Detail( ) {
 
   const updateDragon = () => {
 
-    fetch(`http://5c4b2a47aa8ee500142b4887.mockapi.io/api/v1/dragon/${id}`, parameters)
+    fetch(`http://5c4b2a47aa8ee500142b4887.mockapi.io/api/v1/dragon/${id}`, {
+      method: "PUT",
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ 
+      name: dragonName, 
+      type: dragonType, 
+      })
+    })
       .then((res) => res.json())
       .then((json) => {
         console.log(json)
@@ -45,7 +52,14 @@ function Detail( ) {
   }
 
   const deleteDragon = () => {
-    fetch(`http://5c4b2a47aa8ee500142b4887.mockapi.io/api/v1/dragon/${id}`, parameters)
+    fetch(`http://5c4b2a47aa8ee500142b4887.mockapi.io/api/v1/dragon/${id}`, {
+      method: "DELETE",
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ 
+      name: dragonName, 
+      type: dragonType, 
+      })
+    })
       .then((res) => res.json())
       .then((json) => {
         console.log(json)
