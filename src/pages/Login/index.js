@@ -2,6 +2,7 @@ import React, { useState, useCallback } from 'react';
 
 import { Container } from './styles';
 import { useAuth } from '../../contexts/auth';
+import dragonLogin from '../../assets/dragonLogin.png';
 
 function Login() {
   const { signIn } = useAuth();
@@ -20,11 +21,10 @@ function Login() {
 
   return (
     <Container>
+      <img src={dragonLogin} />
       <form onSubmit={handleLogin}>
-        <label>Email</label>
-        <input type="text" onChange={e => setEmail(e.target.value)}/>
-        <label>Senha</label>
-        <input type="password" onChange={e => setPassword(e.target.value)}></input>
+        <input placeholder="E-mail" type="text" onChange={e => setEmail(e.target.value)}/>
+        <input placeholder="Senha" type="password" onChange={e => setPassword(e.target.value)}></input>
         <button type="submit">Entrar</button>
       </form>
     </Container>

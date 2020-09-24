@@ -31,6 +31,17 @@ ul  {
   list-style: none;
 }
 
+a
+{ 
+ text-decoration:none;
+ color: #000;
+} 
+
+a:link 
+{ 
+ text-decoration:none; 
+} 
+
 button {
   cursor: pointer;
 }

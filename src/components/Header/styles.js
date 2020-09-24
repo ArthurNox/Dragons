@@ -9,6 +9,14 @@ export const Container = styled.header`
   padding: 1rem 2rem;
   margin-bottom: 0.5rem;
 
+
+  display:flex;
+  justify-content: center;
+  justify-content: space-between;
   
   box-shadow: 2px 2px 4px #000;
+
+  .logout {
+    cursor: pointer;
+  }
 `

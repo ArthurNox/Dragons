@@ -1,30 +1,26 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
-// import { Container } from './styles';
-import Header from '../../components/Header'
-import Card from '../../components/Card'
-import { alphabeticalOrder } from '../../helpers/alphabeticalOrder';
+import { useDragons } from '../../contexts/dragons';
+
+import Header from '../../components/Header';
+import Card from '../../components/Card';
+import CreateDragon from '../../components/CreateDragon';
+
+import { Container } from './styles';
 
 function Home() {
-  const [dragons, setDragons] = useState([])
-
-  useEffect(() => {
-    fetch("http://5c4b2a47aa8ee500142b4887.mockapi.io/api/v1/dragon")
-      .then((res) => res.json())
-      .then((json) => {
-        
-        setDragons(alphabeticalOrder(json))
-      })
-  }, [])
-
+  const { dragons } = useDragons();
 
   return (
     <>
-    <Header />
-    {dragons.map((dragon) => (
-      <Card key={dragon.id} dragon={dragon}/>
-    ))}
-  </>
+      <Header title={"Dragões"}/>
+      <Container className="cards">
+        {dragons.map((dragon) => (
+          <Card key={dragon.id} dragon={dragon}/>
+        ))}
+      </Container>
+      <CreateDragon />   
+    </>
   );
 }
 

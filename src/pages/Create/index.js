@@ -1,7 +1,9 @@
 import React, { useState  } from 'react';
+import { Redirect } from 'react-router-dom';
 
-//import { Container } from './styles';
-import Header from '../../components/Header'
+import { Container } from './styles';
+import Header from '../../components/Header';
+import dragonCreate from '../../assets/dragonCreate.png';
 
 function Create() {
   const [dragonName,setDragonName] = useState([''])
@@ -28,14 +30,17 @@ function Create() {
 
   return (
     <>
-    <Header />
-    <form onSubmit={createDragon}>
-      <label>Nome</label>
-      <input type="text" onChange={e => setDragonName(e.target.value)}/>
-      <label>Tipo</label>
-      <input type="text" onChange={e => setDragonType(e.target.value)}/>
-      <button type="submit" >Criar</button>
-    </form>
+    <Header title={"Criar Novo Dragão"} buttonBack/>
+    <Container>
+      <img src={dragonCreate} />
+      <form onSubmit={createDragon}>
+        <label>Nome</label>
+        <input type="text" onChange={e => setDragonName(e.target.value)}/>
+        <label>Tipo</label>
+        <input type="text" onChange={e => setDragonType(e.target.value)}/>
+        <button type="submit" >Criar</button>
+      </form>
+    </Container>
     </>
   );
 }

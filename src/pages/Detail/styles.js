@@ -6,13 +6,13 @@ export const Container = styled.section`
   justify-content: center;
   align-items: center;
 
-  width: 56rem;
-  height: auto;
+  margin: 2rem 3rem;
   border-radius: 25px;
   background-color: #00a896;
 
   img {
     width: fit-content;
+    margin: 2rem;
   }
 
   form {
@@ -21,5 +21,36 @@ export const Container = styled.section`
     flex-direction: column;
     align-items: center;
 
+    margin:1rem;
+
   }
+  .hidden { 
+    display:none; 
+    }
+  
+  .update-icon {
+    color: green;
+    cursor: pointer;
+    
+  }
+
+  .delete-icon {
+    color: red;
+    cursor: pointer;
+  }
+
+  .edited-icon {
+    color: black;
+    cursor: pointer;
+  }
+  .edit-icon {
+    color: red;
+    cursor: pointer;
+  }
+
+  /* .edit-content {
+    position: fixed;
+    bottom: 0px;
+    right: 0px; 
+  } */
 `
