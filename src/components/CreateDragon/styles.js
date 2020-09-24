@@ -10,10 +10,13 @@ export const Container = styled.button`
 
   .create {
     fill: #05668D;
+
   }
 
+ :hover{
+  transition: all .2s ease-in-out;
+  transform: scale(1.1);
+ }
 
-transition: all .2s ease-in-out; };
-:hover { transform: scale(1.1);
 
 `

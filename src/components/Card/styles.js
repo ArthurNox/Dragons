@@ -19,7 +19,9 @@ export const Container = styled.section`
     width: fit-content;
   }
 
-  p {
+  h1, p {
+    color: #FFFFFF;
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
     padding-bottom: 1rem;
   }
 `

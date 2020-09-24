@@ -3,8 +3,6 @@ import { useParams, Redirect } from "react-router-dom";
 import { format } from 'date-fns';
 import { HiPencilAlt, HiClipboardCopy, HiRefresh, HiXCircle } from "react-icons/hi";
 
-import history from '../../services/history';
-
 import { Container } from './styles';
 import Header from '../../components/Header';
 import dragonDetail from '../../assets/dragonDetail.png';
@@ -69,7 +67,6 @@ function Detail( ) {
           window.location.href = '/home';
         }
       })
-
   }
 
   return(
@@ -90,7 +87,7 @@ function Detail( ) {
             {editable ? 
             (<HiPencilAlt className="edit-icon" size={60} />) 
               : 
-            (<HiClipboardCopy className="edited-icon" size={60} />)}
+            (<HiPencilAlt className="edited-icon" size={60} />)}
           </div>
       </Container> 
       <CreateDragon />

@@ -14,7 +14,7 @@ function Header({title, buttonBack}) {
         <p>
           {buttonBack ? (
             <Link to="/home" className="Back">
-              <HiHome  size={60}/>
+              <HiHome  size={50}/>
             </Link>
           ) : (
             <>
@@ -27,7 +27,7 @@ function Header({title, buttonBack}) {
           <p>{title}</p>
       </div>
       <div className="nav-header">
-        <HiLogout className="logout" onClick={() => signOut()} size={60}/>
+        <HiLogout className="logout" onClick={() => signOut()} size={50}/>
       </div>
       
 

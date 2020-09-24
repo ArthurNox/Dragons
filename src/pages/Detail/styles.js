@@ -24,33 +24,29 @@ export const Container = styled.section`
     margin:1rem;
 
   }
+
+  p {
+    color: #FFFFFF;
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+  }
+  
   .hidden { 
     display:none; 
     }
-  
   .update-icon {
     color: green;
     cursor: pointer;
-    
   }
-
   .delete-icon {
     color: red;
     cursor: pointer;
   }
-
-  .edited-icon {
-    color: black;
-    cursor: pointer;
-  }
   .edit-icon {
-    color: red;
+    color: #FFFFFF;
     cursor: pointer;
   }
-
-  /* .edit-content {
-    position: fixed;
-    bottom: 0px;
-    right: 0px; 
-  } */
+  .edited-icon {
+    color: #FF0000;
+    cursor: pointer;
+  }
 `

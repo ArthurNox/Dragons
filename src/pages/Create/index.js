@@ -32,7 +32,7 @@ function Create() {
 
   return (
     <>
-    <Header title={"Criar Novo Dragão"} buttonBack/>
+    <Header title={"Novo Dragão"} buttonBack/>
     <Container>
       <img src={dragonCreate} />
       <form onSubmit={createDragon}>

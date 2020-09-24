@@ -19,4 +19,12 @@ export const Container = styled.header`
   .logout {
     cursor: pointer;
   }
+
+  svg {
+    fill:#FFFFFF;
+  }
+
+  p {
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+  }
 `
