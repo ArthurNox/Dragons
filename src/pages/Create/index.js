@@ -2,7 +2,6 @@ import React, { useState  } from 'react';
 
 //import { Container } from './styles';
 import Header from '../../components/Header'
-import Form from '../../components/Form'
 
 function Create() {
   const [dragonName,setDragonName] = useState([''])
@@ -30,13 +29,13 @@ function Create() {
   return (
     <>
     <Header />
-    <Form onSubmit={createDragon}>
+    <form onSubmit={createDragon}>
       <label>Nome</label>
       <input type="text" onChange={e => setDragonName(e.target.value)}/>
       <label>Tipo</label>
       <input type="text" onChange={e => setDragonType(e.target.value)}/>
       <button type="submit" >Criar</button>
-    </Form>
+    </form>
     </>
   );
 }

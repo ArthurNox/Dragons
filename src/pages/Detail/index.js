@@ -3,14 +3,15 @@ import { useParams } from "react-router-dom";
 import { format } from 'date-fns';
 
 import { Container } from './styles';
-import Header from '../../components/Header'
+import Header from '../../components/Header';
+import dragonDetail from '../../assets/dragonDetail.png'
 
 function Detail( ) {
   const { id } = useParams();
   const [dragonName,setDragonName] = useState(['']);
   const [dragonType, setDragonType] = useState(['']);
 
-  const [edit, setEdit] = useState(['Editar']);
+  // const [edit, setEdit] = useState(['Editar']);
   // const [read, setRead] = useState([true]);
 
   useEffect(() => {
@@ -22,13 +23,13 @@ function Detail( ) {
       })
   }, [id])
 
-  const handleClick = () => {
-    if(edit === 'Editar'){
-      setEdit('Cancelar')
-    } else {
-      setEdit('Editar')
-    }
-  }
+  // const handleClick = () => {
+  //   if(edit === 'Editar'){
+  //     setEdit('Cancelar')
+  //   } else {
+  //     setEdit('Editar')
+  //   }
+  // }
 
   const updateDragon = () => { 
     fetch(`http://5c4b2a47aa8ee500142b4887.mockapi.io/api/v1/dragon/${id}`, {
@@ -62,11 +63,14 @@ function Detail( ) {
     <>
       <Header />
       <Container>
-        <input value={dragonName} onChange={e => setDragonName(e.target.value)} />
-        <input value={dragonType} onChange={e => setDragonType(e.target.value)} />
-        <button onClick={() => handleClick()}>{edit}</button>
-        <button onClick={() => updateDragon()}>Atualizar</button>
-        <button onClick={() => deleteDragon()}>Excluir</button> 
+        <img src={dragonDetail} />
+        <form>
+          <input value={dragonName} onChange={e => setDragonName(e.target.value)} />
+          <input value={dragonType} onChange={e => setDragonType(e.target.value)} />
+          {/* <button onClick={() => handleClick()}>{edit}</button> */}
+          <button onClick={() => updateDragon()}>Atualizar</button>
+          <button onClick={() => deleteDragon()}>Excluir</button> 
+        </form>
       </Container> 
     </>
   );

@@ -35,4 +35,13 @@ button {
   cursor: pointer;
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 16px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #05668d;
+}
+
 `;

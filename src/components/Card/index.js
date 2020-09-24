@@ -2,7 +2,7 @@ import React from 'react';
 import { useHistory } from "react-router-dom";
 
 import { Container } from './styles';
-import dragon_192 from '../../assets/dragon_192.png'
+import dragonCard from '../../assets/dragonCard.png'
 
 // import { Container } from './styles';
 
@@ -16,7 +16,7 @@ function Card({ dragon }) {
 
   return (
     <Container onClick={() => handleClick(dragon.id)}>
-      <img src={dragon_192} alt="Dragões"/>
+      <img src={dragonCard} alt="Dragões"/>
       <h1>{dragon.name}</h1>
       <p>{dragon.type}</p>
     </Container>

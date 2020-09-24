@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
-export const Container = styled.form`
-  width: 350px;
-  height: 450px;
+export const Container = styled.section`
+  width: 253px;
+  height: 281px;
   background: #00A896;
   margin-bottom: 20px;
   border-radius: 25px;
@@ -10,6 +10,11 @@ export const Container = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 
-  box-shadow: 10px 10px 15px #000;
+  box-shadow: 2px 2px 4px #000;
+  cursor: pointer;
+  img {
+    width: fit-content;
+  }
 `
