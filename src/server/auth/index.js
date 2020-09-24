@@ -18,6 +18,6 @@ export const authSingIn = (email, password) => {
           },
         });
       }
-    }, 2000);
+    }, 1000);
   });
 };

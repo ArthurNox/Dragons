@@ -22,10 +22,12 @@ function Create() {
     e.preventDefault();
 
     fetch("http://5c4b2a47aa8ee500142b4887.mockapi.io/api/v1/dragon", params)
-      .then((res) => res.json())
-      .then((json) => {
-        console.log(json)
-      })
+    .then((json) => {
+      console.log(json)
+      if (json.status === 201) {
+        window.location.href = '/home';
+      }
+    })
   }
 
   return (
@@ -34,10 +36,8 @@ function Create() {
     <Container>
       <img src={dragonCreate} />
       <form onSubmit={createDragon}>
-        <label>Nome</label>
-        <input type="text" onChange={e => setDragonName(e.target.value)}/>
-        <label>Tipo</label>
-        <input type="text" onChange={e => setDragonType(e.target.value)}/>
+        <input placeholder="Nome" type="text" onChange={e => setDragonName(e.target.value)}/>
+        <input placeholder="Tipo" type="text" onChange={e => setDragonType(e.target.value)}/>
         <button type="submit" >Criar</button>
       </form>
     </Container>

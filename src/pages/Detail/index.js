@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { useParams } from "react-router-dom";
+import { useParams, Redirect } from "react-router-dom";
 import { format } from 'date-fns';
 import { HiPencilAlt, HiClipboardCopy, HiRefresh, HiXCircle } from "react-icons/hi";
+
+import history from '../../services/history';
 
 import { Container } from './styles';
 import Header from '../../components/Header';
@@ -10,6 +12,7 @@ import CreateDragon from '../../components/CreateDragon';
 
 function Detail( ) {
   const { id } = useParams();
+  // const {  } = history();
   
   const [dragonName,setDragonName] = useState('');
   const [dragonType,setDragonType] = useState('');
@@ -24,8 +27,9 @@ function Detail( ) {
         setDragonName(json.name)
         setDragonType(json.type)
 
-  
-        setDragonDate(json.createdAt)
+        const numberDate = Date.parse(json.createdAt);
+        const formatedDate = format(numberDate, 'dd-MM-yyyy');
+        setDragonDate(formatedDate)
       })
   }, [id])
 
@@ -43,10 +47,12 @@ function Detail( ) {
         name: dragonName, 
         type: dragonType, 
       })})
-    .then((res) => res.json())
-    .then((json) => {
-      console.log(json)
-    })
+      .then((json) => {
+        console.log(json)
+        if (json.status === 200) {
+          window.location.href = '/home';
+        }
+      })
   }
   
   const deleteDragon = () => {
@@ -57,9 +63,11 @@ function Detail( ) {
       name: dragonName, 
       type: dragonType, 
       })})
-      .then((res) => res.json())
       .then((json) => {
         console.log(json)
+        if (json.status === 200) {
+          window.location.href = '/home';
+        }
       })
 
   }
