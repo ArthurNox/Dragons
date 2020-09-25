@@ -14,7 +14,7 @@ function Header({title, buttonBack}) {
         <p>
           {buttonBack ? (
             <Link to="/home" className="Back">
-              <HiHome aria-label="Voltar para Home"  size={50}/>
+              <HiHome data-tip="Home" aria-label="Voltar para Home"  size={50}/>
             </Link>
           ) : (
             <>
@@ -27,7 +27,7 @@ function Header({title, buttonBack}) {
           <p>{title}</p>
       </div>
       <div className="nav-header">
-        <HiLogout aria-label="Logout" className="logout" onClick={() => signOut()} size={50}/>
+        <HiLogout data-tip="Sair" aria-label="Logout" className="logout" onClick={() => signOut()} size={50}/>
       </div>
       
 

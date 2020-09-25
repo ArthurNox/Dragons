@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactTooltip from 'react-tooltip';
 
 import { useDragons } from '../../contexts/dragons';
 
@@ -13,6 +14,7 @@ function Home() {
 
   return (
     <>
+      <ReactTooltip />
       <Header title={"Dragões"}/>
       <Container className="cards">
         {dragons.map((dragon) => (

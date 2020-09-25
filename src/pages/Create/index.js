@@ -1,4 +1,5 @@
 import React, { useState  } from 'react';
+import ReactTooltip from 'react-tooltip';
 
 import { Container } from './styles';
 import Header from '../../components/Header';
@@ -32,6 +33,7 @@ function Create() {
 
   return (
     <>
+    <ReactTooltip />
     <Header title={"Novo Dragão"} buttonBack/>
     <Container>
       <img alt={'Dragon Avatar'} src={dragonCreate} />

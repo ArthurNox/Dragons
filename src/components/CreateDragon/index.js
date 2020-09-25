@@ -7,7 +7,7 @@ import { Container } from './styles';
 
 function CreateDragon() {
   return(
-    <Container aria-label="Criar dragão">
+    <Container data-tip="Criar Dragão" aria-label="Criar dragão">
     <Link to={"/create"}>
       <HiPlusCircle className="create" size={120} />
     </Link>

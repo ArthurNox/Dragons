@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
 import { format } from 'date-fns';
 import { HiPencilAlt } from "react-icons/hi";
+import ReactTooltip from 'react-tooltip';
 
 import { Container } from './styles';
 import Header from '../../components/Header';
@@ -65,6 +66,7 @@ function Detail( ) {
 
   return(
     <>
+      <ReactTooltip />
       <Header title={"Detalhes"} buttonBack/>
       <Container>
         <form>
@@ -78,7 +80,7 @@ function Detail( ) {
           </div>
         </form>
         <div className="edit-content" onClick={ e => editable ? setEditable(false) : setEditable(true)}>
-          <HiPencilAlt aria-label="Habilitar Edição" className="edit-icon" size={60} color={(editable ? 'white' : 'red')} />
+          <HiPencilAlt data-tip="Habilitar Edição"  aria-label="Habilitar Edição" className="edit-icon" size={60} color={(editable ? 'white' : 'red')} />
         </div>
       </Container> 
       <CreateDragon />
