@@ -1,13 +1,13 @@
 export const authSingIn = (email, password) => {
   return new Promise(resolve => {
     setTimeout(() => {
-      if (email === 'admin@admin.com' && password === '1234') {
+      if (email === 'dragao@admin.com' && password === '12345') {
         resolve({
           data: {
-            token: 'asdfsdfsdfqrqewrafkaçlçak.aspodiuqlçwẽkrjç.qebfgeasgucnmvb',
+            token: 'asdfsdfDSADrqewrafkaçspodiuqlçwẽkrjç.qebfgeasSADnmvb',
             user: {
               name: 'User',
-              email: 'admin@admin.com',
+              email: 'dragao@admin.com',
             },
           },
         });

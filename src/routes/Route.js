@@ -11,8 +11,6 @@ export default function RouteWrapper({
 }) {
   const { user } = useAuth();
 
-  console.log(user); 
-
   if (!!user === false && isPrivate) {
     return <Redirect to="/" />;
   }

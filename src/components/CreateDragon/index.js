@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import { HiPlusCircle } from "react-icons/hi";
 
@@ -7,7 +7,7 @@ import { Container } from './styles';
 
 function CreateDragon() {
   return(
-    <Container>
+    <Container aria-label="Criar dragão">
     <Link to={"/create"}>
       <HiPlusCircle className="create" size={120} />
     </Link>

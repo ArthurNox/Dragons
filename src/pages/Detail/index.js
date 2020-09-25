@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useMemo } from 'react';
-import { useParams, Redirect } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import { useParams } from "react-router-dom";
 import { format } from 'date-fns';
-import { HiPencilAlt, HiClipboardCopy, HiRefresh, HiXCircle } from "react-icons/hi";
+import { HiPencilAlt } from "react-icons/hi";
 
 import { Container } from './styles';
 import Header from '../../components/Header';
@@ -10,7 +10,6 @@ import CreateDragon from '../../components/CreateDragon';
 
 function Detail( ) {
   const { id } = useParams();
-  // const {  } = history();
   
   const [dragonName,setDragonName] = useState('');
   const [dragonType,setDragonType] = useState('');
@@ -19,6 +18,7 @@ function Detail( ) {
 
 
   useEffect(() => {
+    console.log('ahhhh')
     fetch(`http://5c4b2a47aa8ee500142b4887.mockapi.io/api/v1/dragon/${id}`)
       .then((res) => res.json())
       .then((json) => {
@@ -30,12 +30,6 @@ function Detail( ) {
         setDragonDate(formatedDate)
       })
   }, [id])
-
-  if(editable){
-    console.log('true')
-  } else {
-    console.log('false')
-  }
 
   const updateDragon = () => { 
     fetch(`http://5c4b2a47aa8ee500142b4887.mockapi.io/api/v1/dragon/${id}`, {
@@ -73,22 +67,19 @@ function Detail( ) {
     <>
       <Header title={"Detalhes"} buttonBack/>
       <Container>
-        <img src={dragonDetail} />
-        <p>Criado em: {dragonDate}</p>
         <form>
-          <input value={dragonName} onChange={e => setDragonName(e.target.value)} />
-          <input value={dragonType} onChange={e => setDragonType(e.target.value)} />
+          <p>Criado em: {dragonDate}</p>
+          <img alt={'Dragon Avatar'} src={dragonDetail} />
+          <input value={dragonName} onChange={e => setDragonName(e.target.value)} readOnly={editable}/>
+          <input value={dragonType} onChange={e => setDragonType(e.target.value)} readOnly={editable}/>
           <div className={editable ? 'hidden' : ''} >
-            <HiRefresh className="update-icon" size={50} onClick={() => updateDragon()} />
-            <HiXCircle className="delete-icon" size={50} onClick={() => deleteDragon()} />
+            <button aria-label="Atualizar Dragão" type="button" className="update-icon" onClick={() => updateDragon()} >Atualizar</button>
+            <button aria-label="Excluir Dragão" type="button" className="delete-icon" onClick={() => deleteDragon()} >Excluir</button>
           </div>
         </form>
-          <div className="edit-content" onClick={ e => editable ? setEditable(false) : setEditable(true)}>
-            {editable ? 
-            (<HiPencilAlt className="edit-icon" size={60} />) 
-              : 
-            (<HiPencilAlt className="edited-icon" size={60} />)}
-          </div>
+        <div className="edit-content" onClick={ e => editable ? setEditable(false) : setEditable(true)}>
+          <HiPencilAlt aria-label="Habilitar Edição" className="edit-icon" size={60} color={(editable ? 'white' : 'red')} />
+        </div>
       </Container> 
       <CreateDragon />
     </>

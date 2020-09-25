@@ -1,3 +1,8 @@
+## Informações do Projeto
+
+E-mail:'dragao@admin.com'
+Senha: '12345'
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

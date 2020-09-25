@@ -1,5 +1,4 @@
 import React, { useState  } from 'react';
-import { Redirect } from 'react-router-dom';
 
 import { Container } from './styles';
 import Header from '../../components/Header';
@@ -28,17 +27,18 @@ function Create() {
         window.location.href = '/home';
       }
     })
+    
   }
 
   return (
     <>
     <Header title={"Novo Dragão"} buttonBack/>
     <Container>
-      <img src={dragonCreate} />
-      <form onSubmit={createDragon}>
+      <img alt={'Dragon Avatar'} src={dragonCreate} />
+      <form >
         <input placeholder="Nome" type="text" onChange={e => setDragonName(e.target.value)}/>
         <input placeholder="Tipo" type="text" onChange={e => setDragonType(e.target.value)}/>
-        <button type="submit" >Criar</button>
+        <button type="button" onClick={createDragon}>Criar</button>
       </form>
     </Container>
     </>
