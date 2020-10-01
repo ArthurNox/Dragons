@@ -9,7 +9,7 @@ export const DragonsProvider = ({ children }) => {
   const [dragons, setDragons] = useState([]);
 
   const getDragons = useMemo(() => {
-    fetch("http://5c4b2a47aa8ee500142b4887.mockapi.io/api/v1/dragon")
+    fetch("https://5c4b2a47aa8ee500142b4887.mockapi.io/api/v1/dragon")
       .then((res) => res.json())
       .then((json) => {
         setDragons(alphabeticalOrder(json));
