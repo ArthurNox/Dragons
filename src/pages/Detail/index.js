@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useMemo } from "react";
 import { useParams } from "react-router-dom";
 import { format } from "date-fns";
 import { HiPencilAlt } from "react-icons/hi";
@@ -19,7 +19,7 @@ function Detail() {
   const [dragonDate, setDragonDate] = useState("");
   const [editable, setEditable] = useState([false]);
 
-  useEffect(() => {
+  const getDragon = useMemo(() => {
     fetch(`http://5c4b2a47aa8ee500142b4887.mockapi.io/api/v1/dragon/${id}`)
       .then((res) => res.json())
       .then((json) => {
@@ -33,10 +33,12 @@ function Detail() {
   }, [id]);
 
   const updateDragon = () => {
-    dispatch({
-      type: "UPDATE",
-      payload: { id: id, name: dragonName, type: dragonType },
-    });
+    if (dragonName && dragonType) {
+      dispatch({
+        type: "UPDATE",
+        payload: { id: id, name: dragonName, type: dragonType },
+      });
+    }
   };
 
   const deleteDragon = () => {

@@ -13,10 +13,12 @@ function Create() {
   const [dragonType, setDragonType] = useState("");
 
   const createDragon = () => {
-    dispatch({
-      type: "CREATE",
-      payload: { name: dragonName, type: dragonType },
-    });
+    if (dragonName && dragonType) {
+      dispatch({
+        type: "CREATE",
+        payload: { name: dragonName, type: dragonType },
+      });
+    }
   };
 
   return (
