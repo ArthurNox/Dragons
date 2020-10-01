@@ -20,7 +20,7 @@ function Detail() {
   const [editable, setEditable] = useState([false]);
 
   const getDragon = useMemo(() => {
-    fetch(`http://5c4b2a47aa8ee500142b4887.mockapi.io/api/v1/dragon/${id}`)
+    fetch(`https://5c4b2a47aa8ee500142b4887.mockapi.io/api/v1/dragon/${id}`)
       .then((res) => res.json())
       .then((json) => {
         setDragonName(json.name);
