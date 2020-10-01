@@ -1,6 +1,6 @@
 import { useReducer } from "react";
 
-const base_URL = "http://5c4b2a47aa8ee500142b4887.mockapi.io/api/v1/dragon/";
+const base_URL = "https://5c4b2a47aa8ee500142b4887.mockapi.io/api/v1/dragon/";
 
 const redirection = (res) => {
   console.log(res.status);
