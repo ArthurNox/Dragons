@@ -27,7 +27,7 @@ function Header({title, buttonBack}) {
           <p>{title}</p>
       </div>
       <div className="nav-header">
-        <HiLogout data-tip="Sair" aria-label="Logout" className="logout" onClick={() => signOut()} size={50}/>
+        <HiLogout data-tip="Logout" aria-label="Logout" className="logout" onClick={() => signOut()} size={50}/>
       </div>
       
 

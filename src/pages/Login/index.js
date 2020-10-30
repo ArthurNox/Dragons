@@ -28,7 +28,7 @@ function Login() {
     <Container>
       <form onSubmit={handleLogin} className={error ? "fail" : ""}>
         <img alt={"Dragon"} className="login__logo" src={dragonLogin} />
-        <h1>Dragões</h1>
+        <h1>Dragons</h1>
         <input
           placeholder="E-mail"
           type="text"

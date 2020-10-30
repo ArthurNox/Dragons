@@ -13,7 +13,7 @@ function Card({ dragon }) {
 
   return (
     <Container onClick={() => handleClick(dragon.id)}>
-      <img src={dragonCard} alt="Dragões"/>
+      <img src={dragonCard} alt="Dragon"/>
       <h1>{dragon.name}</h1>
       <p>{dragon.type}</p>
     </Container>

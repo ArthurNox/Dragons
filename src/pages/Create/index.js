@@ -28,12 +28,12 @@ function Create() {
         <img alt={"Dragon Avatar"} src={dragonCreate} />
         <form>
           <input
-            placeholder="Nome"
+            placeholder="Name"
             type="text"
             onChange={(e) => setDragonName(e.target.value)}
           />
           <input
-            placeholder="Tipo"
+            placeholder="Type"
             type="text"
             onChange={(e) => setDragonType(e.target.value)}
           />

@@ -53,7 +53,7 @@ function Detail() {
       <Header title={"Detalhes"} buttonBack />
       <Container>
         <form>
-          <p>Criado em: {dragonDate}</p>
+          <p>Created on: {dragonDate}</p>
           <img alt={"Dragon Avatar"} src={dragonDetail} />
           <input
             value={dragonName}
@@ -67,20 +67,20 @@ function Detail() {
           />
           <div className={editable ? "hidden" : ""}>
             <button
-              aria-label="Atualizar Dragão"
+              aria-label="Update Dragon"
               type="button"
               className="update-icon"
               onClick={() => updateDragon()}
             >
-              Atualizar
+              Update
             </button>
             <button
-              aria-label="Excluir Dragão"
+              aria-label="Delete Dragon"
               type="button"
               className="delete-icon"
               onClick={() => deleteDragon()}
             >
-              Excluir
+              Delete
             </button>
           </div>
         </form>
@@ -89,8 +89,8 @@ function Detail() {
           onClick={(e) => (editable ? setEditable(false) : setEditable(true))}
         >
           <HiPencilAlt
-            data-tip="Habilitar Edição"
-            aria-label="Habilitar Edição"
+            data-tip="Enable Editing"
+            aria-label="Enable Editing"
             className="edit-icon"
             size={60}
             color={editable ? "white" : "red"}

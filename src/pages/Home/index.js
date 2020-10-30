@@ -15,7 +15,7 @@ function Home() {
   return (
     <>
       <ReactTooltip />
-      <Header title={"Dragões"}/>
+      <Header title={"Dragons"}/>
       <Container className="cards">
         {dragons.map((dragon) => (
           <Card key={dragon.id} dragon={dragon}/>
